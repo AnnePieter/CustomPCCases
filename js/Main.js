@@ -1,7 +1,7 @@
 /**
  * Created by annepieter on 24/10/2016.
  */
-var scene, camera, directionalLight, renderer;
+var scene, camera, directionalLight, renderer, controls;
 var material,geometry, cube;
 init();
 animate();
@@ -24,6 +24,7 @@ function init(){
 
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth - 20, window.innerHeight - 20);
+    renderer.setClearColor(0xB2DFEE);
     document.body.appendChild(renderer.domElement);
     controls = new THREE.OrbitControls(camera);
     controls.addEventListener( 'change' );
@@ -34,7 +35,7 @@ function init(){
 
 function animate(){
     renderer.render(scene,camera);
-    directionalLight.position.set( camera.position.x,camera.position.y,camera.position.z );
+    directionalLight.position.set(camera.position.x,camera.position.y,camera.position.z);
     requestAnimationFrame(animate);
 
 }
