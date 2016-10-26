@@ -11,24 +11,23 @@ function init(){
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 1, 10000);
     camera.position.z = 5;
-    directionalLight = new THREE.DirectionalLight(0xE5E5E5,1);
-    directionalLight.position.set( camera.position.x,camera.position.y,camera.position.z );
+    directionalLight = new THREE.DirectionalLight(0xE5E5E5,0.5);
+    directionalLight.position.set( 5,10,5 );
     directionalLight.target.position.set(0,0,0);
     ambientlight = new THREE.AmbientLight(0xE5E5E5,1);
 
-    scene.add(directionalLight);
+    scene.add(ambientlight);
 
-    material = new THREE.MeshPhongMaterial({color: 0x123456});
-    /*geometry = new THREE.BoxGeometry(1,1,1);
-    cube = new THREE.Mesh(geometry,material);
-    cube.position.set(0,0,0);
-    scene.add(cube);*/
 
-    loader = new THREE.JSONLoader();
-    loader.load('js/MSI.json', function(MSI){
-        mesh = new THREE.Mesh(MSI, material);
-        scene.add(mesh);
-    });
+    var mtlLoader = new THREE.MTLLoader();
+    mtlLoader.setPath( 'js/' );
+    mtlLoader.load( 'MSI.mtl', function( materials1 ) {
+        materials1.preload();
+    var loader = new THREE.OBJLoader();
+        loader.setMaterials(materials1);
+    loader.load( 'js/MSI.obj', function ( object ) {
+        scene.add( object );
+    } );});
 
 
     renderer = new THREE.WebGLRenderer();
@@ -44,7 +43,6 @@ function init(){
 
 function animate(){
     renderer.render(scene,camera);
-    directionalLight.position.set(camera.position.x,camera.position.y,camera.position.z);
     requestAnimationFrame(animate);
 
 }
