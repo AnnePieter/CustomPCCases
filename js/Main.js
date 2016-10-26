@@ -29,7 +29,6 @@ function init(){
         scene.add( object );
     } );});
 
-
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth - 200, window.innerHeight - 200);
     renderer.setClearColor(0xB2DFEE);
@@ -43,7 +42,17 @@ function init(){
 
 function animate(){
     renderer.render(scene,camera);
+
     requestAnimationFrame(animate);
 
 }
 animate();
+
+function ColorHex(){
+    var color = prompt("give color hex 0x......");
+    if (color != null && color.toString().length == 6) {
+        cube.material.color.setHex('0x'+color);
+        console.log(cube.material.color);
+    }
+    else {ColorHex()}
+}
