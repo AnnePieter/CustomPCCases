@@ -54,5 +54,5 @@ function ColorHex(){
         cube.material.color.setHex('0x'+color);
         console.log(cube.material.color);
     }
-    else {ColorHex()}
+    else {alert("beter geef je groter nummer dan");ColorHex()}
 }
