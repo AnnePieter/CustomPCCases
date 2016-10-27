@@ -3,7 +3,7 @@
  */
 var scene, camera, directionalLight, renderer, controls, ambientlight;
 var material,geometry, cube;
-var loader, mesh;
+var loader;
 init();
 animate();
 function init(){
@@ -17,17 +17,6 @@ function init(){
     ambientlight = new THREE.AmbientLight(0xE5E5E5,1);
 
     scene.add(ambientlight);
-
-
-    var mtlLoader = new THREE.MTLLoader();
-    mtlLoader.setPath( 'js/' );
-    mtlLoader.load( 'MSI.mtl', function( materials1 ) {
-        materials1.preload();
-    var loader = new THREE.OBJLoader();
-        loader.setMaterials(materials1);
-    loader.load( 'js/MSI.obj', function ( object ) {
-        scene.add( object );
-    } );});
 
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth - 200, window.innerHeight - 200);
