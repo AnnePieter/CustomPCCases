@@ -33,7 +33,7 @@ mtlLoader.load( 'windowTintedSide.mtl', function( windowTinted ) {
         scene.add( object );
     } );});
 
-/** Front panels **/
+    /** Front panels **/
 
 mtlLoader.load( 'alienware.mtl', function( alienware ) {
     alienware.preload();
@@ -98,14 +98,14 @@ mtlLoader.load( 'Overwatch.mtl', function( Overwatch ) {
         scene.add( object );
     } );});
 
-mtlLoader.load( 'razer.mtl', function( razer ) {
+/*mtlLoader.load( 'razer.mtl', function( razer ) {
     razer.preload();
     var loader = new THREE.OBJLoader();
     loader.setPath( 'models/ThreeJS/' );
     loader.setMaterials(razer);
     loader.load( 'razer.obj', function ( object ) {
         scene.add( object );
-    } );});
+    } );});*/
 
 mtlLoader.load( 'VSWit.mtl', function( VSWit ) {
     VSWit.preload();

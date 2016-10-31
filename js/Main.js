@@ -1,9 +1,8 @@
 /**
  * Created by annepieter on 24/10/2016.
  */
-var scene, camera, directionalLight, renderer, controls, ambientlight;
+var scene, camera, directionalLight, renderer, controls;
 var material,geometry, cube;
-var loader;
 init();
 animate();
 function init(){
@@ -14,9 +13,8 @@ function init(){
     directionalLight = new THREE.DirectionalLight(0xE5E5E5,0.5);
     directionalLight.position.set( 5,10,5 );
     directionalLight.target.position.set(0,0,0);
-    ambientlight = new THREE.AmbientLight(0xE5E5E5,1);
 
-    scene.add(ambientlight);
+    scene.add(directionalLight);
 
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth - 200, window.innerHeight - 200);
