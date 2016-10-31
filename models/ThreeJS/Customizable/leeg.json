@@ -1,16 +1,50 @@
 {
-    "vertices":[-0.05,-2,1,-0.05,2,1,-0.05,-2,-1,-0.05,2,-1,0.05,-2,1,0.05,2,1,0.05,-2,-1,0.05,2,-1],
-    "metadata":{
-        "vertices":8,
-        "version":3,
+    "images":[],
+    "geometries":[{
         "type":"Geometry",
-        "faces":6,
-        "uvs":0,
+        "uuid":"514A9CA1-2D44-4699-AD14-EDAD37411FF1",
+        "data":{
+            "vertices":[-1,-1,-1,-1,-1,1,-1,1,-1,-1,1,1,1,-1,-1,1,-1,1,1,1,-1,1,1,1],
+            "faces":[33,2,0,1,3,0,0,0,0,33,3,7,6,2,1,1,1,1,33,7,5,4,6,2,2,2,2,33,0,4,5,1,3,3,3,3,33,0,2,6,4,4,4,4,4,33,5,7,3,1,5,5,5,5],
+            "metadata":{
+                "vertices":8,
+                "faces":6,
+                "normals":6,
+                "version":3,
+                "generator":"io_three",
+                "uvs":0
+            },
+            "name":"Cube.001Geometry.2",
+            "normals":[-1,-0,-0,0,-0,-1,1,-0,-0,0,-0,1,-0,-1,-0,-0,1,-0],
+            "uvs":[]
+        }
+    }],
+    "metadata":{
+        "version":4.4,
+        "type":"Object",
         "generator":"io_three",
-        "normals":6
+        "sourceFile":"Windowless.blend"
     },
-    "faces":[33,0,1,3,2,0,0,0,0,33,2,3,7,6,1,1,1,1,33,6,7,5,4,2,2,2,2,33,1,0,4,5,3,3,3,3,33,4,0,2,6,4,4,4,4,33,7,3,1,5,5,5,5,5],
-    "uvs":[],
-    "name":"Cube.001Geometry",
-    "normals":[-1,0,-0,0,-1,0,1,0,-0,0,1,-0,0,0,1,0,0,-1]
+    "textures":[],
+    "object":{
+        "type":"Scene",
+        "children":[{
+            "name":"Cube",
+            "uuid":"34A37725-6E76-434D-8533-08BCF79C9A35",
+            "matrix":[-0.05,0,0,0,0,0,1,0,0,2,0,0,0,0,0,1],
+            "visible":true,
+            "type":"Mesh",
+            "castShadow":false,
+            "receiveShadow":false,
+            "geometry":"514A9CA1-2D44-4699-AD14-EDAD37411FF1"
+        }],
+        "uuid":"58604299-DE8C-4B8D-93D3-35F9BF613205",
+        "matrix":[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+    },
+    "materials":[],
+    "animations":[{
+        "fps":24,
+        "tracks":[],
+        "name":"default"
+    }]
 }
