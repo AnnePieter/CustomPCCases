@@ -22,7 +22,6 @@ function init(){
     document.body.appendChild(renderer.domElement);
     controls = new THREE.OrbitControls(camera);
     controls.addEventListener( 'change' );
-
     animate();
 
 }
@@ -42,4 +41,25 @@ function ColorHex(){
         console.log(cube.material.color);
     }
     else {alert("beter geef je groter nummer dan");ColorHex()}
+}
+
+function showDropdown() {
+    FetchModels();
+}
+
+function FetchModels() {
+    var arr = [1,2,3];
+    var dropdown = document.getElementById("sidepanels");
+    if (dropdown) {
+        for (var i = 0; i < arr.length; ++i) {
+            addOption(dropdown, arr[i], arr[i]);
+        }
+    }
+}
+
+addOption = function(selectbox, text, value) {
+    var optn = document.createElement("OPTION");
+    optn.text = text;
+    optn.value = value;
+    selectbox.options.add(optn);
 }
