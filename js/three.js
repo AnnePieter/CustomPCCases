@@ -19883,7 +19883,7 @@
 
 		function onContextLost( event ) {
 
-			event.preventDefault();
+			/*event.preventDefault();*/
 
 			resetGLState();
 			setDefaultGLState();

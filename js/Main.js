@@ -2,7 +2,10 @@
  * Created by annepieter on 24/10/2016.
  */
 var scene, camera, directionalLight, renderer, controls;
-var material,geometry, cube;
+var material, geometry, cube;
+var arr = [];
+var mtlLoader = new THREE.MTLLoader();
+mtlLoader.setPath( 'models/ThreeJs/Stock/' );
 init();
 animate();
 function init(){
@@ -43,23 +46,31 @@ function ColorHex(){
     else {alert("beter geef je groter nummer dan");ColorHex()}
 }
 
-function showDropdown() {
-    FetchModels();
-}
 
 function FetchModels() {
-    var arr = [1,2,3];
-    var dropdown = document.getElementById("sidepanels");
-    if (dropdown) {
-        for (var i = 0; i < arr.length; ++i) {
-            addOption(dropdown, arr[i], arr[i]);
-        }
+    Frontpanelpush();
+    var x = document.getElementById("sidepanels");
+    var array = arr;
+    for(var i = 0; i < array.length; i++)
+    {
+        var option = document.createElement("option");
+        option.text = array[i];
+        option.value = array[i];
+        x.add(option, x[i]);
     }
 }
+function ShowModel() {
+    var x = document.getElementById("sidepanels");
+    var modelToLoad = x.selected();
+    mtlLoader.load( modelToLoad+'.mtl', function( Selected ) {
 
-addOption = function(selectbox, text, value) {
-    var optn = document.createElement("OPTION");
-    optn.text = text;
-    optn.value = value;
-    selectbox.options.add(optn);
+        alienware.preload();
+        var loader = new THREE.OBJLoader();
+        loader.setPath( 'models/ThreeJs/Stock/' );
+        loader.setMaterials(Selected);
+        loader.load( modelToLoad+'.obj', function ( object ) {
+            scene.add( object);
+        } );});
+
 }
+
