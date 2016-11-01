@@ -3,8 +3,6 @@
  */
 var scene, camera, directionalLight, renderer, controls, ambientlight;
 var material, cube;
-var scene, camera, directionalLight, renderer, controls;
-var material, geometry, cube;
 var arr = [];
 var mtlLoader = new THREE.MTLLoader();
 mtlLoader.setPath( 'models/ThreeJs/Stock/' );
@@ -21,6 +19,7 @@ function init(){
     ambientlight = new THREE.AmbientLight(0xffffff, 0.5);
 
 
+
     scene.add(directionalLight,ambientlight);
 
     renderer = new THREE.WebGLRenderer();
@@ -29,7 +28,7 @@ function init(){
     document.body.appendChild(renderer.domElement);
     controls = new THREE.OrbitControls(camera);
     controls.addEventListener( 'change' );
-    material = new THREE.MeshPhongMaterial({color:0xffffff});
+    material = new THREE.MeshPhongMaterial({color:0xeeeeee});
     animate();
 
 }
@@ -82,6 +81,7 @@ function ShowModel() {
         });
     }
     else {
+        mtlLoader.setPath( 'models/ThreeJs/Stock/' );
         var modelColor = modelToLoad.split('#');
         material.color.setHex('0x' + modelColor[1]);
         mtlLoader.load(modelColor[0] + '.mtl', function (Selected) {
