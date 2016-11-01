@@ -141,6 +141,57 @@ jsonloader.load('models/ThreeJS/Customizable/BottomPootjes.json', function(botto
     }));
     scene.add(bottom);
 });
+jsonloader.load('models/ThreeJS/Customizable/Top.json', function(top){
+    top.traverse((function (child) {
+        if(child instanceof THREE.Mesh)
+        {
+            child.material = material;
+        }
+    }));
+    top.position.y = 4.1;
+    scene.add(top);
+});
+
+jsonloader.load('models/ThreeJS/Customizable/Back.json', function(back){
+    back.traverse((function (child) {
+        if(child instanceof THREE.Mesh)
+        {
+            child.material = material;
+        }
+    }));
+    back.position.x = -1.95;
+    back.position.y = 2.05;
+    scene.add(back);
+});
+
+jsonloader.load('models/ThreeJS/Customizable/window.json', function(window){
+    window.traverse((function (child) {
+        if(child instanceof THREE.Mesh)
+        {
+            child.material = material;
+        }
+    }));
+    window.position.z = 0.95;
+    window.position.y = 2.05;
+    scene.add(window);
+});
+
+jsonloader.load('models/ThreeJS/Customizable/windowless.json', function(windowless){
+    windowless.traverse((function (child) {
+        if(child instanceof THREE.Mesh)
+        {
+            child.material = material;
+        }
+    }));
+    windowless.position.z = -0.95;
+    windowless.position.y = 2.05;
+    scene.add(windowless);
+});
+
+
+
+
+
 
 //var jsonloader = new THREE.ObjectLoader();
   //  var mesh = jsonloader.load('models/ThreeJS/Customizable/Front1.json');

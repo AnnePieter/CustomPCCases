@@ -33,6 +33,7 @@ function init(){
     animate();
 
 }
+animate();
 
 function animate(){
 
@@ -52,8 +53,6 @@ function ColorHex(){
     }
     else {alert("beter geef je groter nummer dan");ColorHex()}
 }
-
-
 
 function FetchModels() {
     Frontpanelpush();
@@ -91,10 +90,18 @@ function ShowModel() {
             var loader = new THREE.OBJLoader();
             loader.setPath('models/ThreeJs/Stock/');
             loader.setMaterials(Selected);
+<<<<<<< HEAD
             loader.load(modelToLoad[0] + '.obj', function (object) {
+=======
+            loader.load(modelToLoad + '.obj', function (object) {
+                object.position.x = 1.95;
+                object.position.y = 2.05;
+>>>>>>> 78e393b1775f8d6470205444773c9ce67bbc8db1
                 scene.add(object);
+
             });
         });
     }
+
 
 }
