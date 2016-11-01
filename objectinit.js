@@ -22,16 +22,7 @@ mtlLoader.load( 'windowlessSide.mtl', function( windowless ) {
     loader.setMaterials(windowless);
     loader.load( 'windowlessSide.obj', function ( object ) {
         scene.add( object );
-    } );});
-
-mtlLoader.load( 'windowTintedSide.mtl', function( windowTinted ) {
-    windowTinted.preload();
-    var loader = new THREE.OBJLoader();
-    loader.setPath( 'models/ThreeJs/Stock/' );
-    loader.setMaterials(windowTinted);
-    loader.load( 'windowTintedSide.obj', function ( object ) {
-        scene.add( object );
-    } );});/*
+    } );});*/
 
     /** Front panels **/
 
@@ -120,6 +111,14 @@ mtlLoader.load( 'VSZwart.mtl', function( VSZwart ) {
 /** custom **/
 
 var jsonloader = new THREE.ObjectLoader();
-    var mesh = jsonloader.parse('models/ThreeJS/Customizable/Front1.json');
-    scene.add(mesh);
+jsonloader.load('models/ThreeJS/Customizable/BottomPootjes.json', function(bottom){
+    bottom.traverse((function (child) {
+        if(child instanceof THREE.Mesh)
+        {
+            child.material = material;
+        }
+    }));
+    scene.add(bottom);
+});
+
 
