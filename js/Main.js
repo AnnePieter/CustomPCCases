@@ -33,6 +33,7 @@ function init(){
     animate();
 
 }
+animate();
 
 function animate(){
 
@@ -52,8 +53,6 @@ function ColorHex(){
     }
     else {alert("beter geef je groter nummer dan");ColorHex()}
 }
-
-
 
 function FetchModels() {
     Frontpanelpush();
@@ -77,8 +76,12 @@ function ShowModel() {
             loader.setPath('models/ThreeJs/Stock/');
             loader.setMaterials(Selected);
             loader.load(modelToLoad + '.obj', function (object) {
+                object.position.x = 1.95;
+                object.position.y = 2.05;
                 scene.add(object);
+
             });
         });
+
 
 }
