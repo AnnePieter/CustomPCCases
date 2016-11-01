@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body onload="FetchModels()">
 <div>
 <script src="js/three.js"></script>
 <script src="js/OBJLoader.js"></script>
@@ -16,7 +16,9 @@
 <br>
 <br>
 <button onclick="ColorHex()">Change Color</button>
-
-
+<button onclick="ShowModel()">Show model</button>
+<select id="sidepanels" name="sidepanel">
+    <option>Choose a panel</option>
+</select>
 </body>
 </html>

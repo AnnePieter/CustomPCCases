@@ -1,8 +1,16 @@
 /**
  * Created by annepieter on 24/10/2016.
  */
+<<<<<<< HEAD
 var scene, camera, directionalLight, renderer, controls, ambientlight;
 var material, cube;
+=======
+var scene, camera, directionalLight, renderer, controls;
+var material, geometry, cube;
+var arr = [];
+var mtlLoader = new THREE.MTLLoader();
+mtlLoader.setPath( 'models/ThreeJs/Stock/' );
+>>>>>>> d663e5a2dfb2a6eebaf8065aabadfac0cd68c135
 init();
 animate();
 function init(){
@@ -24,8 +32,11 @@ function init(){
     document.body.appendChild(renderer.domElement);
     controls = new THREE.OrbitControls(camera);
     controls.addEventListener( 'change' );
+<<<<<<< HEAD
     material = new THREE.MeshPhongMaterial({color:0xffffff});
 
+=======
+>>>>>>> d663e5a2dfb2a6eebaf8065aabadfac0cd68c135
     animate();
 
 }
@@ -48,4 +59,38 @@ function ColorHex(){
         material.color.setHex('0x'+color);
     }
     else {alert("beter geef je groter nummer dan");ColorHex()}
+<<<<<<< HEAD
 }
+=======
+}
+
+
+function FetchModels() {
+    Frontpanelpush();
+    var x = document.getElementById("sidepanels");
+    var array = arr;
+    for(var i = 0; i < array.length; i++)
+    {
+        var option = document.createElement("option");
+        option.text = array[i];
+        option.value = array[i];
+        x.add(option, x[i]);
+    }
+}
+function ShowModel() {
+    var x = document.getElementById("sidepanels");
+    var modelToLoad = x.options[x.selectedIndex].text;
+        mtlLoader.load(modelToLoad + '.mtl', function (Selected) {
+
+            Selected.preload();
+            var loader = new THREE.OBJLoader();
+            loader.setPath('models/ThreeJs/Stock/');
+            loader.setMaterials(Selected);
+            loader.load(modelToLoad + '.obj', function (object) {
+                scene.add(object);
+            });
+        });
+
+}
+
+>>>>>>> d663e5a2dfb2a6eebaf8065aabadfac0cd68c135
