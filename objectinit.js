@@ -165,6 +165,17 @@ jsonloader.load('models/ThreeJS/Customizable/Back.json', function(back){
 });
 
 jsonloader.load('models/ThreeJS/Customizable/window.json', function(window){
+    mtlLoader.setPath( 'models/ThreeJs/Customizable/' );
+    mtlLoader.load( 'windowOnlyTinted.mtl', function( wo ) {
+        wo.preload();
+        var loader = new THREE.OBJLoader();
+        loader.setPath( 'models/ThreeJs/Customizable/' );
+        loader.setMaterials(wo);
+        loader.load( 'windowOnlyTinted.obj', function ( object ) {
+            object.position.z = 0.95;
+            object.position.y = 2.05;
+            scene.add( object );
+        } );});
     window.traverse((function (child) {
         if(child instanceof THREE.Mesh)
         {
@@ -175,6 +186,8 @@ jsonloader.load('models/ThreeJS/Customizable/window.json', function(window){
     window.position.y = 2.05;
     scene.add(window);
 });
+
+
 
 jsonloader.load('models/ThreeJS/Customizable/windowless.json', function(windowless){
     windowless.traverse((function (child) {
