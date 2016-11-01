@@ -61,14 +61,15 @@ function FetchModels() {
     for(var i = 0; i < array.length; i++)
     {
         var option = document.createElement("option");
-        option.text = array[i];
+        var tekst = array[i].split("#");
+        option.text = tekst[0];
         option.value = array[i];
         x.add(option, x[i]);
     }
 }
 function ShowModel() {
     var x = document.getElementById("sidepanels");
-    var modelToLoad = x.options[x.selectedIndex].text;
+    var modelToLoad = x.options[x.selectedIndex].value;
     if (modelToLoad == "FrontTextureable") {
         var jsonloader = new THREE.ObjectLoader();
         jsonloader.load('models/ThreeJS/Customizable/Front1.json', function (frontTexture) {
