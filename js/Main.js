@@ -70,15 +70,31 @@ function FetchModels() {
 function ShowModel() {
     var x = document.getElementById("sidepanels");
     var modelToLoad = x.options[x.selectedIndex].text;
-        mtlLoader.load(modelToLoad + '.mtl', function (Selected) {
+    if (modelToLoad == "FrontTextureable")
+    {
+        var jsonloader = new THREE.ObjectLoader();
+        jsonloader.load('models/ThreeJS/Customizable/Front1.json', function(frontTexture){
+            frontTexture.traverse((function (child) {
+                if(child instanceof THREE.Mesh)
+                {
+                    child.material = material;
+                }
+            }));
+            scene.add(frontTexture);
+        });
+    }
+    else {
+        var modelColor = modelToLoad.split('#')
+        mtlLoader.load(modelToLoad[0] + '.mtl', function (Selected) {
 
             Selected.preload();
             var loader = new THREE.OBJLoader();
             loader.setPath('models/ThreeJs/Stock/');
             loader.setMaterials(Selected);
-            loader.load(modelToLoad + '.obj', function (object) {
+            loader.load(modelToLoad[0] + '.obj', function (object) {
                 scene.add(object);
             });
         });
+    }
 
 }

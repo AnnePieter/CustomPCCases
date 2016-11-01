@@ -5,15 +5,15 @@
 
 /** Side panels **/
 function Frontpanelpush(){
-    arr.push("alienware");
-    arr.push("aperture");
-    arr.push("deadpool");
+    arr.push("alienware#000000");
+    arr.push("aperture#FFFFFF");
+    arr.push("deadpool#000000");
     arr.push("leeg");
-    arr.push("MSI");
-    arr.push("nvidia");
-    arr.push("Overwatch");
-    arr.push("VSWit");
-    arr.push("VSZwart");
+    arr.push("MSI#000000");
+    arr.push("nvidia#000000");
+    arr.push("Overwatch#FF4800");
+    arr.push("VSWit#FFFFFF");
+    arr.push("VSZwart#000000");
     arr.push("FrontTextureable");
 }
 /*mtlLoader.load( 'windowSide.mtl', function( windowSide ) {
