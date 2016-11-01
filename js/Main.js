@@ -69,13 +69,11 @@ function FetchModels() {
 function ShowModel() {
     var x = document.getElementById("sidepanels");
     var modelToLoad = x.options[x.selectedIndex].text;
-    if (modelToLoad == "FrontTextureable")
-    {
+    if (modelToLoad == "FrontTextureable") {
         var jsonloader = new THREE.ObjectLoader();
-        jsonloader.load('models/ThreeJS/Customizable/Front1.json', function(frontTexture){
+        jsonloader.load('models/ThreeJS/Customizable/Front1.json', function (frontTexture) {
             frontTexture.traverse((function (child) {
-                if(child instanceof THREE.Mesh)
-                {
+                if (child instanceof THREE.Mesh) {
                     child.material = material;
                 }
             }));
@@ -83,25 +81,20 @@ function ShowModel() {
         });
     }
     else {
-        var modelColor = modelToLoad.split('#')
-        mtlLoader.load(modelToLoad[0] + '.mtl', function (Selected) {
+        var modelColor = modelToLoad.split('#');
+        material.color.setHex('0x' + modelColor[1]);
+        mtlLoader.load(modelColor[0] + '.mtl', function (Selected) {
 
             Selected.preload();
             var loader = new THREE.OBJLoader();
             loader.setPath('models/ThreeJs/Stock/');
             loader.setMaterials(Selected);
-<<<<<<< HEAD
-            loader.load(modelToLoad[0] + '.obj', function (object) {
-=======
-            loader.load(modelToLoad + '.obj', function (object) {
+            loader.load(modelColor[0] + '.obj', function (object) {
                 object.position.x = 1.95;
                 object.position.y = 2.05;
->>>>>>> 78e393b1775f8d6470205444773c9ce67bbc8db1
                 scene.add(object);
 
             });
         });
     }
-
-
 }
