@@ -106,15 +106,16 @@ mtlLoader.load( 'nvidia.mtl', function( nvidia ) {
         scene.add( object );
     } );});
 
-mtlLoader.load( 'Overwatch.mtl', function( Overwatch ) {
-    Overwatch.preload();
-    var loader = new THREE.OBJLoader();
-    loader.setPath( 'models/ThreeJs/Stock/' );
-    loader.setMaterials(Overwatch);
-    loader.load( 'Overwatch.obj', function ( object ) {
-        object.visible = false;
-        scene.add( object );
-    } );});
+    mtlLoader.load('Overwatch.mtl', function (Overwatch) {
+        Overwatch.preload();
+        var loader = new THREE.OBJLoader();
+        loader.setPath('models/ThreeJs/Stock/');
+        loader.setMaterials(Overwatch);
+        loader.load('Overwatch.obj', function (object) {
+            object.visible = false;
+            scene.add(object);
+        });
+    });
 
 
 mtlLoader.load( 'VSWit.mtl', function( VSWit ) {

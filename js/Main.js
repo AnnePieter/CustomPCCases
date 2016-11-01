@@ -61,16 +61,17 @@ function FetchModels() {
 }
 function ShowModel() {
     var x = document.getElementById("sidepanels");
-    var modelToLoad = x.selected();
-    mtlLoader.load( modelToLoad+'.mtl', function( Selected ) {
+    var modelToLoad = x.options[x.selectedIndex].text;
+        mtlLoader.load(modelToLoad + '.mtl', function (Selected) {
 
-        alienware.preload();
-        var loader = new THREE.OBJLoader();
-        loader.setPath( 'models/ThreeJs/Stock/' );
-        loader.setMaterials(Selected);
-        loader.load( modelToLoad+'.obj', function ( object ) {
-            scene.add( object);
-        } );});
+            Selected.preload();
+            var loader = new THREE.OBJLoader();
+            loader.setPath('models/ThreeJs/Stock/');
+            loader.setMaterials(Selected);
+            loader.load(modelToLoad + '.obj', function (object) {
+                scene.add(object);
+            });
+        });
 
 }
 
