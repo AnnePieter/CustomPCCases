@@ -1,16 +1,13 @@
 /**
  * Created by annepieter on 24/10/2016.
  */
-<<<<<<< HEAD
 var scene, camera, directionalLight, renderer, controls, ambientlight;
 var material, cube;
-=======
 var scene, camera, directionalLight, renderer, controls;
 var material, geometry, cube;
 var arr = [];
 var mtlLoader = new THREE.MTLLoader();
 mtlLoader.setPath( 'models/ThreeJs/Stock/' );
->>>>>>> d663e5a2dfb2a6eebaf8065aabadfac0cd68c135
 init();
 animate();
 function init(){
@@ -32,11 +29,7 @@ function init(){
     document.body.appendChild(renderer.domElement);
     controls = new THREE.OrbitControls(camera);
     controls.addEventListener( 'change' );
-<<<<<<< HEAD
     material = new THREE.MeshPhongMaterial({color:0xffffff});
-
-=======
->>>>>>> d663e5a2dfb2a6eebaf8065aabadfac0cd68c135
     animate();
 
 }
@@ -51,7 +44,6 @@ function animate(){
     requestAnimationFrame(animate);
 
 }
-animate();
 
 function ColorHex(){
     var color = prompt("give color hex 0x......");
@@ -59,10 +51,8 @@ function ColorHex(){
         material.color.setHex('0x'+color);
     }
     else {alert("beter geef je groter nummer dan");ColorHex()}
-<<<<<<< HEAD
 }
-=======
-}
+
 
 
 function FetchModels() {
@@ -92,5 +82,3 @@ function ShowModel() {
         });
 
 }
-
->>>>>>> d663e5a2dfb2a6eebaf8065aabadfac0cd68c135

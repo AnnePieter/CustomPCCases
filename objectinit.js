@@ -4,7 +4,7 @@
 
 
 /** Side panels **/
-function Frontpanelpush () {
+function Frontpanelpush(){
     arr.push("alienware");
     arr.push("aperture");
     arr.push("deadpool");
@@ -130,7 +130,6 @@ mtlLoader.load( 'VSZwart.mtl', function( VSZwart ) {
     } );});*/
 
 /** custom **/
-<<<<<<< HEAD
 
 var jsonloader = new THREE.ObjectLoader();
 jsonloader.load('models/ThreeJS/Customizable/BottomPootjes.json', function(bottom){
@@ -143,9 +142,7 @@ jsonloader.load('models/ThreeJS/Customizable/BottomPootjes.json', function(botto
     scene.add(bottom);
 });
 
-=======
 //var jsonloader = new THREE.ObjectLoader();
   //  var mesh = jsonloader.load('models/ThreeJS/Customizable/Front1.json');
  //   scene.add(mesh);
->>>>>>> d663e5a2dfb2a6eebaf8065aabadfac0cd68c135
 
