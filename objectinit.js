@@ -12,7 +12,7 @@ function Frontpanelpush(){
     arr.push("MSI#000000");
     arr.push("nvidia#000000");
     arr.push("Overwatch#FF4800");
-    arr.push("VSWit#FFFFFF");
+    arr.push("VS#FFFFFF");
     arr.push("VSZwart#000000");
     arr.push("FrontTextureable");
 }
