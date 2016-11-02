@@ -5,16 +5,14 @@
 
 /** Side panels **/
 function Frontpanelpush(){
-    arr.push("alienware#000000");
-    arr.push("aperture#FFFFFF");
-    arr.push("deadpool#010101");
-    arr.push("leeg");
-    arr.push("MSI#000000");
-    arr.push("nvidia#000000");
-    arr.push("Overwatch#FF4800");
-    arr.push("VS#FFFFFF");
-    arr.push("VSZwart#000000");
-    arr.push("FrontTextureable");
+    jsonarr.push("alienware#000000*20ea19");
+    jsonarr.push("aperture#FFFFFF*adaeff");
+    jsonarr.push("MSI#000000*FF0000");
+    jsonarr.push("nvidia#000000*48a11a");
+    jsonarr.push("VS#FFFFFF*551A8B");
+    jsonarr.push("Front1#000000*FF0000");
+    objarr.push("deadpool#010101");
+    objarr.push("Overwatch#FF4800");
 }
 /*
 mtlLoader.load( 'CaseTest.mtl', function( windowSide ) {

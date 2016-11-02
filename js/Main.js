@@ -2,8 +2,9 @@
  * Created by annepieter on 24/10/2016.
  */
 var scene, camera, directionalLight, renderer, controls;
-var material, geometry, cube;
-var arr = [];
+var material, geometry, cube, material2;
+var objarr = [];
+var jsonarr =[];
 var mtlLoader = new THREE.MTLLoader();
 mtlLoader.setPath( 'models/ThreeJs/Stock/' );
 init();
@@ -28,6 +29,7 @@ function init(){
     controls = new THREE.OrbitControls(camera);
     controls.addEventListener( 'change' );
     material = new THREE.MeshPhongMaterial({color:0xffffff});
+    material2 = new THREE.MeshPhongMaterial({color:0x000000});
     animate();
 
 }
@@ -55,7 +57,16 @@ function ColorHex(){
 function FetchModels() {
     Frontpanelpush();
     var x = document.getElementById("sidepanels");
-    var array = arr;
+    var array = objarr;
+    for(var i = 0; i < array.length; i++)
+    {
+        var option = document.createElement("option");
+        var tekst = array[i].split("#");
+        option.text = tekst[0];
+        option.value = array[i];
+        x.add(option, x[i]);
+    }
+    array = jsonarr;
     for(var i = 0; i < array.length; i++)
     {
         var option = document.createElement("option");
@@ -68,38 +79,39 @@ function FetchModels() {
 function ShowModel() {
     var x = document.getElementById("sidepanels");
     var modelToLoad = x.options[x.selectedIndex].value;
-    if (modelToLoad == "FrontTextureable") {
+    var modelColor = modelToLoad.split('#');
+    var modelColor2 = modelColor[1].split('*');
+    material2.color.setHex('0x' + modelColor2[1]);
+    if (x.selectedIndex <  jsonarr.length) {
         var jsonloader = new THREE.ObjectLoader();
-        jsonloader.load('models/ThreeJS/Customizable/Front1.json', function (frontTexture) {
+        jsonloader.load('models/ThreeJS/logos/'+ modelColor[0] + '.json', function (frontTexture) {
             frontTexture.traverse((function (child) {
                 if (child instanceof THREE.Mesh) {
-                    child.material = material;
+                    child.material = material2;
                 }
             }));
+            frontTexture.position.x = 1.95;
+            frontTexture.position.y = 2.05;
+            frontTexture.rotation.y = Math.PI;
             scene.add(frontTexture);
         });
     }
     else {
         var modelColor = modelToLoad.split('#');
+        var modelColor2 = modelColor[1].split('*');
         material.color.setHex('0x' + modelColor[1]);
-       /* mtlLoader.load(modelColor[0] + '.mtl', function (Selected) {
+        mtlLoader.load(modelColor[0] + '.mtl', function (Selected) {
 
-            Selected.preload();*/
+            Selected.preload();
             var loader = new THREE.OBJLoader();
             loader.setPath('models/ThreeJs/Stock/');
-           // loader.setMaterials(Selected);
+            loader.setMaterials(Selected);
             loader.load(modelColor[0] + '.obj', function (object) {
-                object.traverse( function ( child ) {
-                    if ( child instanceof THREE.Mesh ) {
-                        //child.material.ambient.setHex(0xFF0000);
-                        child.material.color.setHex(0x123456);
-                    }
-                } );
                 object.position.x = 1.95;
                 object.position.y = 2.05;
                 scene.add(object);
 
             });
-        //});
+        });
     }
 }
