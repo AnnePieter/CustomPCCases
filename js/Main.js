@@ -1,8 +1,6 @@
 /**
  * Created by annepieter on 24/10/2016.
  */
-var scene, camera, directionalLight, renderer, controls, ambientlight;
-var material, cube;
 var scene, camera, directionalLight, renderer, controls;
 var material, geometry, cube;
 var arr = [];
@@ -18,7 +16,7 @@ function init(){
     directionalLight = new THREE.DirectionalLight(0xffffff,0.5);
     directionalLight.position.set( camera.position.x,camera.position.y,camera.position.z );
     directionalLight.target.position.set(0,0,0);
-    ambientlight = new THREE.AmbientLight(0xffffff, 0.5);
+    var ambientlight = new THREE.AmbientLight(0xffffff, 0.5);
 
 
     scene.add(directionalLight,ambientlight);
@@ -84,18 +82,24 @@ function ShowModel() {
     else {
         var modelColor = modelToLoad.split('#');
         material.color.setHex('0x' + modelColor[1]);
-        mtlLoader.load(modelColor[0] + '.mtl', function (Selected) {
+       /* mtlLoader.load(modelColor[0] + '.mtl', function (Selected) {
 
-            Selected.preload();
+            Selected.preload();*/
             var loader = new THREE.OBJLoader();
             loader.setPath('models/ThreeJs/Stock/');
-            loader.setMaterials(Selected);
+           // loader.setMaterials(Selected);
             loader.load(modelColor[0] + '.obj', function (object) {
+                object.traverse( function ( child ) {
+                    if ( child instanceof THREE.Mesh ) {
+                        //child.material.ambient.setHex(0xFF0000);
+                        child.material.color.setHex(0x123456);
+                    }
+                } );
                 object.position.x = 1.95;
                 object.position.y = 2.05;
                 scene.add(object);
 
             });
-        });
+        //});
     }
 }
