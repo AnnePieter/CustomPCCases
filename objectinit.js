@@ -7,7 +7,7 @@
 function Frontpanelpush(){
     arr.push("alienware#000000");
     arr.push("aperture#FFFFFF");
-    arr.push("deadpool#000000");
+    arr.push("deadpool#010101");
     arr.push("leeg");
     arr.push("MSI#000000");
     arr.push("nvidia#000000");
@@ -16,12 +16,13 @@ function Frontpanelpush(){
     arr.push("VSZwart#000000");
     arr.push("FrontTextureable");
 }
-/*mtlLoader.load( 'windowSide.mtl', function( windowSide ) {
+/*
+mtlLoader.load( 'CaseTest.mtl', function( windowSide ) {
     windowSide.preload();
     var loader = new THREE.OBJLoader();
     loader.setPath( 'models/ThreeJs/Stock/' );
     loader.setMaterials(windowSide);
-    loader.load( 'windowSide.obj', function ( object ) {
+    loader.load( 'CaseTest.obj', function ( object ) {
         scene.add( object );
     } );});
 
@@ -132,6 +133,7 @@ mtlLoader.load( 'VSZwart.mtl', function( VSZwart ) {
 /** custom **/
 
 var jsonloader = new THREE.ObjectLoader();
+
 jsonloader.load('models/ThreeJS/Customizable/BottomPootjes.json', function(bottom){
     bottom.traverse((function (child) {
         if(child instanceof THREE.Mesh)
@@ -200,10 +202,6 @@ jsonloader.load('models/ThreeJS/Customizable/windowless.json', function(windowle
     windowless.position.y = 2.05;
     scene.add(windowless);
 });
-
-
-
-
 
 
 //var jsonloader = new THREE.ObjectLoader();
