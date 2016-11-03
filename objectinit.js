@@ -50,6 +50,7 @@ jsonloader.load('models/ThreeJS/Customizable/Back.json', function(back){
     }));
     back.position.x = -1.95;
     back.position.y = 2.05;
+    back.rotation.y = Math.PI;
     scene.add(back);
 });
 jsonloader.load('models/ThreeJS/Customizable/leeg.json', function(front){
@@ -97,8 +98,46 @@ jsonloader.load('models/ThreeJS/Customizable/windowless.json', function(windowle
         loader.setPath( 'models/ThreeJS/inside/' );
         loader.setMaterials(co);
         loader.load( 'Cooler.obj', function ( object ) {
+            object.position.z = -0.8;
+            object.position.y = 2;
+            object.position.x = -1;
             scene.add( object );
         } );});
+    mtlLoader.load( 'GPU.mtl', function( gpu ) {
+        gpu.preload();
+        var loader = new THREE.OBJLoader();
+        loader.setPath( 'models/ThreeJS/inside/' );
+        loader.setMaterials(gpu);
+        loader.load( 'GPU.obj', function ( object ) {
+            object.position.z = -0.8;
+            object.position.y = 2;
+            object.position.x = -1;
+            scene.add( object );
+        } );});
+    mtlLoader.load( 'mobotest.mtl', function( mobo ) {
+        mobo.preload();
+        var loader = new THREE.OBJLoader();
+        loader.setPath( 'models/ThreeJS/inside/' );
+        loader.setMaterials(mobo);
+        loader.load( 'mobotest.obj', function ( object ) {
+            object.position.z = -0.8;
+            object.position.y = 2;
+            object.position.x = -1;
+            scene.add( object );
+        } );});
+    mtlLoader.load( 'ram.mtl', function( ram ) {
+        ram.preload();
+        var loader = new THREE.OBJLoader();
+        loader.setPath( 'models/ThreeJS/inside/' );
+        loader.setMaterials(ram);
+        loader.load( 'ram.obj', function ( object ) {
+            object.position.z = -0.8;
+            object.position.y = 2;
+            object.position.x = -1;
+            scene.add( object );
+        } );});
+
+
 
     windowless.traverse((function (child) {
         if(child instanceof THREE.Mesh)
