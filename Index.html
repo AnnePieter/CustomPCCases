@@ -6,50 +6,20 @@
 </head>
 <body onload="FetchModels()">
 <div>
-<script src="js/jquery-3.1.1.js"></script>
 <script src="js/three.js"></script>
 <script src="js/OBJLoader.js"></script>
 <script src="js/MTLLoader.js"></script>
 <script src="js/OrbitControls.js"></script>
-<script src="js/jquery.minicolors.js"></script>
 <script src="objectinit.js"></script>
 <script src="js/Main.js"></script>
 </div>
 <br>
 <br>
-<button onclick="ColorHex()">Change Primary Color</button>
-<button onclick="ColorHex2()">Change Secondary Color</button>
+<input type="color" id="primary" value="#ffffff" onchange="colorPrimary()" title="Primary">
+<input type="color" id="secondary" value="#ffffff" onchange="colorSecondary()" title="Secondary">
 <button onclick="ShowModel()">Show model</button>
 <select id="sidepanels" name="sidepanel">
     <option>Choose a panel</option>
 </select>
-<input type="color">
-<script>
-    $('INPUT.minicolors').minicolors();
-
-    $.minicolors = {
-        defaults: {
-            animationSpeed: 50,
-            animationEasing: 'swing',
-            change: null,
-            changeDelay: 0,
-            control: 'hue',
-            dataUris: true,
-            defaultValue: '',
-            format: 'hex',
-            hide: null,
-            hideSpeed: 100,
-            inline: false,
-            keywords: '',
-            letterCase: 'lowercase',
-            opacity: false,
-            position: 'bottom left',
-            show: null,
-            showSpeed: 100,
-            theme: 'default',
-            swatches: []
-        }
-    };
-</script>
 </body>
 </html>

@@ -6,6 +6,8 @@ var material, geometry, cube, material2;
 var objarr = [];
 var jsonarr =[];
 var mtlLoader = new THREE.MTLLoader();
+var value = "#ffffff";
+//var valueTest = document.getElementById('primary').value;
 
 init();
 animate();
@@ -116,8 +118,8 @@ function ShowModel() {
     }
     else {
         mtlLoader.setPath( 'models/ThreeJs/logos/' );
-        var modelColor = modelToLoad.split('#');
-        var modelColor2 = modelColor[1].split('*');
+        modelColor = modelToLoad.split('#');
+        modelColor2 = modelColor[1].split('*');
         material.color.setHex('0x' + modelColor[1]);
         mtlLoader.load(modelColor[0] + '.mtl', function (Selected) {
 
@@ -134,4 +136,16 @@ function ShowModel() {
             });
         });
     }
+}
+
+function colorPrimary(){
+    value = document.getElementById('primary').value;
+    console.log(value);
+    material.color.setHex('0x' + document.getElementById('primary').value.split("#")[1]);
+}
+
+function colorSecondary(){
+    value = document.getElementById('secondary').value;
+    console.log(value);
+    material2.color.setHex('0x' + document.getElementById('secondary').value.split("#")[1]);
 }

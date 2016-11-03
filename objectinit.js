@@ -5,7 +5,7 @@
 
 /** Side panels **/
 function Frontpanelpush(){
-    jsonarr.push("alienware#343434*20ea19");
+    jsonarr.push("alienware#000000*20ea19");
     jsonarr.push("Aperture#FFFFFF*adaeff");
     jsonarr.push("MSI#343434*FF0000");
     jsonarr.push("nvidia#343434*48a11a");
@@ -90,6 +90,16 @@ jsonloader.load('models/ThreeJS/Customizable/window.json', function(window){
 
 
 jsonloader.load('models/ThreeJS/Customizable/windowless.json', function(windowless){
+    mtlLoader.setPath( 'models/ThreeJS/inside/' );
+    mtlLoader.load( 'Cooler.mtl', function( co ) {
+        co.preload();
+        var loader = new THREE.OBJLoader();
+        loader.setPath( 'models/ThreeJS/inside/' );
+        loader.setMaterials(co);
+        loader.load( 'Cooler.obj', function ( object ) {
+            scene.add( object );
+        } );});
+
     windowless.traverse((function (child) {
         if(child instanceof THREE.Mesh)
         {
