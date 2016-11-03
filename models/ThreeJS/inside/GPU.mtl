@@ -120,8 +120,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_2.jpg
-map_Ka  760\\tex_2.jpg
 
 newmtl Material__182
 Ns 9.803922
@@ -132,8 +130,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_3.jpg
-map_Ka  760\\tex_3.jpg
 
 newmtl Material__183
 Ns 9.803922
@@ -144,8 +140,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_21.jpg
-map_Ka  760\\tex_21.jpg
 
 newmtl Material__184
 Ns 9.803922
@@ -156,8 +150,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_5.jpg
-map_Ka  760\\tex_5.jpg
 
 newmtl Material__207
 Ns 9.803922
@@ -168,8 +160,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_19.jpg
-map_Ka  760\\tex_19.jpg
 
 newmtl Material__230
 Ns 9.803922
@@ -180,8 +170,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_6.jpg
-map_Ka  760\\tex_6.jpg
 
 newmtl Material__231
 Ns 9.803922
@@ -192,8 +180,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_4.jpg
-map_Ka  760\\tex_4.jpg
 
 newmtl Material__243
 Ns 9.803922
@@ -204,8 +190,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_7.jpg
-map_Ka  760\\tex_7.jpg
 
 newmtl Material__244
 Ns 9.803922
@@ -216,8 +200,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_8.jpg
-map_Ka  760\\tex_8.jpg
 
 newmtl Material__245
 Ns 9.803922
@@ -228,8 +210,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_3.jpg
-map_Ka  760\\tex_3.jpg
 
 newmtl Material__246
 Ns 9.803922
@@ -250,8 +230,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_10.jpg
-map_Ka  760\\tex_10.jpg
 
 newmtl Material__248
 Ns 9.803922
@@ -262,8 +240,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_11.jpg
-map_Ka  760\\tex_11.jpg
 
 newmtl Material__25
 Ns 9.803922
@@ -274,8 +250,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_20.jpg
-map_Ka  760\\tex_20.jpg
 
 newmtl Material__263213
 Ns 9.803922
@@ -296,8 +270,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_18.jpg
-map_Ka  760\\tex_18.jpg
 
 newmtl Material__275
 Ns 9.803922
@@ -308,8 +280,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_12.jpg
-map_Ka  760\\tex_12.jpg
 
 newmtl Material__287
 Ns 9.803922
@@ -320,8 +290,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_13.jpg
-map_Ka  760\\tex_13.jpg
 
 newmtl Material__288
 Ns 9.803922
@@ -332,8 +300,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_14.jpg
-map_Ka  760\\tex_14.jpg
 
 newmtl Material__465
 Ns 9.803922
@@ -344,8 +310,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_15.jpg
-map_Ka  760\\tex_15.jpg
 
 newmtl Material__466
 Ns 9.803922
@@ -356,8 +320,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_16.jpg
-map_Ka  760\\tex_16.jpg
 
 newmtl Material__48
 Ns 9.803922
@@ -368,8 +330,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.500000
 d 1.000000
 illum 2
-map_Kd 760\tex_1.jpg
-map_Ka  760\\tex_1.jpg
 
 newmtl wire_027177027
 Ns 31.372549

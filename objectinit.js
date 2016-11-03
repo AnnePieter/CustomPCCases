@@ -42,6 +42,18 @@ jsonloader.load('models/ThreeJS/Customizable/Top.json', function(top){
 });
 
 jsonloader.load('models/ThreeJS/Customizable/Back.json', function(back){
+    mtlLoader.setPath( 'models/ThreeJS/inside/' );
+    mtlLoader.load( 'Fan.mtl', function( fan ) {
+        fan.preload();
+        var loader = new THREE.OBJLoader();
+        loader.setPath( 'models/ThreeJS/inside/' );
+        loader.setMaterials(fan);
+        loader.load( 'Fan.obj', function ( object ) {
+            object.position.x = -1.95;
+            object.position.y = 2.05;
+            object.rotation.y = Math.PI;
+            scene.add( object );
+        } );});
     back.traverse((function (child) {
         if(child instanceof THREE.Mesh)
         {
@@ -50,7 +62,6 @@ jsonloader.load('models/ThreeJS/Customizable/Back.json', function(back){
     }));
     back.position.x = -1.95;
     back.position.y = 2.05;
-    back.rotation.y = Math.PI;
     scene.add(back);
 });
 jsonloader.load('models/ThreeJS/Customizable/leeg.json', function(front){
@@ -99,8 +110,9 @@ jsonloader.load('models/ThreeJS/Customizable/windowless.json', function(windowle
         loader.setMaterials(co);
         loader.load( 'Cooler.obj', function ( object ) {
             object.position.z = -0.8;
-            object.position.y = 2;
-            object.position.x = -1;
+            object.position.y = 2.7;
+            object.position.x = -0.6;
+            object.scale.set(1.4, 1.4, 1.4);
             scene.add( object );
         } );});
     mtlLoader.load( 'GPU.mtl', function( gpu ) {
@@ -110,8 +122,9 @@ jsonloader.load('models/ThreeJS/Customizable/windowless.json', function(windowle
         loader.setMaterials(gpu);
         loader.load( 'GPU.obj', function ( object ) {
             object.position.z = -0.8;
-            object.position.y = 2;
-            object.position.x = -1;
+            object.position.y = 2.7;
+            object.position.x = -0.6;
+            object.scale.set(1.4, 1.4, 1.4);
             scene.add( object );
         } );});
     mtlLoader.load( 'mobotest.mtl', function( mobo ) {
@@ -121,8 +134,9 @@ jsonloader.load('models/ThreeJS/Customizable/windowless.json', function(windowle
         loader.setMaterials(mobo);
         loader.load( 'mobotest.obj', function ( object ) {
             object.position.z = -0.8;
-            object.position.y = 2;
-            object.position.x = -1;
+            object.position.y = 2.7;
+            object.position.x = -0.6;
+            object.scale.set(1.4, 1.4, 1.4);
             scene.add( object );
         } );});
     mtlLoader.load( 'ram.mtl', function( ram ) {
@@ -132,8 +146,9 @@ jsonloader.load('models/ThreeJS/Customizable/windowless.json', function(windowle
         loader.setMaterials(ram);
         loader.load( 'ram.obj', function ( object ) {
             object.position.z = -0.8;
-            object.position.y = 2;
-            object.position.x = -1;
+            object.position.y = 2.7;
+            object.position.x = -0.6;
+            object.scale.set(1.4, 1.4, 1.4);
             scene.add( object );
         } );});
 
