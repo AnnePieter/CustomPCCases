@@ -109,7 +109,7 @@ function ShowModel() {
             frontTexture.position.x = 1.95;
             frontTexture.position.y = 2.05;
             frontTexture.rotation.y = Math.PI;
-            scene.remove(scene.children[9]);
+            scene.remove(scene.children[10]);
             scene.add(frontTexture);
             console.log(scene.children);
         });
@@ -128,7 +128,7 @@ function ShowModel() {
             loader.load(modelColor[0] + '.obj', function (object) {
                 object.position.x = 1.95;
                 object.position.y = 2.05;
-                scene.remove(scene.children[9]);
+                scene.remove(scene.children[10]);
                 scene.add(object);
 
             });
