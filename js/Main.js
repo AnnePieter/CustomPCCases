@@ -17,7 +17,7 @@ function init(){
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 1, 10000);
     camera.position.z = 7;
-    directionalLight = new THREE.DirectionalLight(0xffffff,0.5);
+    directionalLight = new THREE.DirectionalLight(0xf0f0f0,0.2);
     directionalLight.position.set( camera.position.x,camera.position.y,camera.position.z );
     directionalLight.target.position.set(0,0,0);
     var ambientlight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -48,8 +48,8 @@ function animate(){
 
     if(explosion)
     {
-        scene.children[3].position.x = 
-        explosion = false;
+        explodeFront();
+        Implode();
     }
 
 
@@ -150,13 +150,46 @@ function colorSecondary(){
 }
 
 function Explode(){
-    if(scene.children[3].position.x == 4)
+   explosion = true;
+
+}
+
+function explodeFront(){
+    scene.children[5].position.x += 0.03;
+    scene.children[5].position.y -= 0.02;
+    scene.children[5].rotateZ(-0.015);
+    scene.children[3].position.y += 0.03;
+    scene.children[3].rotateX(-0.015);
+    scene.children[8].position.y += 0.04;
+    scene.children[6].position.y += 0.04;
+
+
+    if(scene.children[15] != null){
+        scene.children[15].position.x += 0.03;
+        scene.children[15].position.y -= 0.02;
+        scene.children[15].rotateZ(0.015);
+    }
+    if(scene.children[5].position.y <= -2)
     {
         explosion = false;
     }
-    else
-    {
-        explosion = true;
-    }
+}
 
+function Implode(){
+    setTimeout(implodeFront,3000);
+}
+
+function implodeFront(){
+    scene.children[5].position.x -= 0.03;
+    scene.children[5].position.y += 0.02;
+    scene.children[5].rotateZ(0.015);
+    scene.children[3].position.y -= 0.03;
+    scene.children[3].rotateX(0.015);
+    scene.children[8].position.y -= 0.04;
+    scene.children[6].position.y -= 0.04;
+    if(scene.children[15] != null){
+        scene.children[15].position.x -= 0.03;
+        scene.children[15].position.y += 0.02;
+        scene.children[15].rotateZ(-0.015);
+    }
 }
