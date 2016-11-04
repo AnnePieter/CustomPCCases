@@ -8,6 +8,7 @@ var jsonarr =[];
 var mtlLoader = new THREE.MTLLoader();
 var value = "#ffffff";
 var explosion = false;
+var objfile = false;
 //var valueTest = document.getElementById('primary').value;
 
 init();
@@ -110,6 +111,7 @@ function ShowModel() {
             frontTexture.position.x = 1.95;
             frontTexture.position.y = 0.05;
             frontTexture.rotation.y = Math.PI;
+            objfile = false;
             scene.remove(scene.children[15]);
             scene.add(frontTexture);
             console.log(scene.children);
@@ -129,6 +131,7 @@ function ShowModel() {
             loader.load(modelColor[0] + '.obj', function (object) {
                 object.position.x = 1.95;
                 object.position.y = 0.05;
+                objfile = true;
                 scene.remove(scene.children[15]);
                 scene.add(object);
 
@@ -167,7 +170,13 @@ function explodeFront(){
     if(scene.children[15] != null){
         scene.children[15].position.x += 0.03;
         scene.children[15].position.y -= 0.02;
-        scene.children[15].rotateZ(0.015);
+        if(objfile)
+        {
+            scene.children[15].rotateZ(-0.015);
+        }
+        else {
+            scene.children[15].rotateZ(0.015);
+        }
     }
     if(scene.children[5].position.y <= -2)
     {
@@ -190,6 +199,12 @@ function implodeFront(){
     if(scene.children[15] != null){
         scene.children[15].position.x -= 0.03;
         scene.children[15].position.y += 0.02;
-        scene.children[15].rotateZ(-0.015);
+        if(objfile)
+        {
+            scene.children[15].rotateZ(0.015);
+        }
+        else {
+            scene.children[15].rotateZ(-0.015);
+        }
     }
 }
