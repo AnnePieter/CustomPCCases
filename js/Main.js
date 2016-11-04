@@ -7,6 +7,7 @@ var objarr = [];
 var jsonarr =[];
 var mtlLoader = new THREE.MTLLoader();
 var value = "#ffffff";
+var explosion = false;
 //var valueTest = document.getElementById('primary').value;
 
 init();
@@ -15,7 +16,7 @@ function init(){
 
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 1, 10000);
-    camera.position.z = 5;
+    camera.position.z = 7;
     directionalLight = new THREE.DirectionalLight(0xffffff,0.5);
     directionalLight.position.set( camera.position.x,camera.position.y,camera.position.z );
     directionalLight.target.position.set(0,0,0);
@@ -42,6 +43,19 @@ function animate(){
     directionalLight.position.y = camera.position.y;
     directionalLight.position.z = camera.position.z;
     renderer.render(scene,camera);
+
+    if(explosion)
+    {
+        scene.children[3].position.x = 
+        explosion = false;
+    }
+
+
+
+
+
+
+
 
     requestAnimationFrame(animate);
 
@@ -92,7 +106,7 @@ function ShowModel() {
                 }
             }));
             frontTexture.position.x = 1.95;
-            frontTexture.position.y = 2.05;
+            frontTexture.position.y = 0.05;
             frontTexture.rotation.y = Math.PI;
             scene.remove(scene.children[15]);
             scene.add(frontTexture);
@@ -112,7 +126,7 @@ function ShowModel() {
             loader.setMaterials(Selected);
             loader.load(modelColor[0] + '.obj', function (object) {
                 object.position.x = 1.95;
-                object.position.y = 2.05;
+                object.position.y = 0.05;
                 scene.remove(scene.children[15]);
                 scene.add(object);
 
@@ -131,4 +145,16 @@ function colorSecondary(){
     value = document.getElementById('secondary').value;
     console.log(value);
     material2.color.setHex('0x' + document.getElementById('secondary').value.split("#")[1]);
+}
+
+function Explode(){
+    if(scene.children[3].position.x == 4)
+    {
+        explosion = false;
+    }
+    else
+    {
+        explosion = true;
+    }
+
 }
