@@ -20,12 +20,8 @@ function init(){
     directionalLight.position.set( camera.position.x,camera.position.y,camera.position.z );
     directionalLight.target.position.set(0,0,0);
     var ambientlight = new THREE.AmbientLight(0xffffff, 0.5);
-    var pointLight = new THREE.SpotLight(0xff0000,1,0,0.5);
-    pointLight.position.set(0,2,0);
-    pointLight.castShadow = true;
 
-
-    scene.add(directionalLight,ambientlight, pointLight);
+    scene.add(directionalLight,ambientlight);
 
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth - 200, window.innerHeight - 200);
@@ -49,22 +45,6 @@ function animate(){
 
     requestAnimationFrame(animate);
 
-}
-
-function ColorHex(){
-    var color = prompt("give color hex 0x......");
-    if (color != null && color.toString().length == 6) {
-        material.color.setHex('0x'+color);
-    }
-    else {alert("beter geef je groter nummer dan");ColorHex()}
-}
-
-function ColorHex2(){
-    var color = prompt("give color hex 0x......");
-    if (color != null && color.toString().length == 6) {
-        material2.color.setHex('0x'+color);
-    }
-    else {alert("beter geef je groter nummer dan");ColorHex()}
 }
 
 function FetchModels() {
@@ -98,6 +78,8 @@ function ShowModel() {
     var modelColor2 = modelColor[1].split('*');
     material.color.setHex('0x' + modelColor2[0]);
     material2.color.setHex('0x' + modelColor2[1]);
+    document.getElementById('primary').value = '#' + modelColor2[0];
+    document.getElementById('secondary').value = '#' + modelColor2[1];
     console.log(modelColor[1]);
     console.log(material);
     if (x.selectedIndex <  jsonarr.length) {
@@ -111,7 +93,7 @@ function ShowModel() {
             frontTexture.position.x = 1.95;
             frontTexture.position.y = 2.05;
             frontTexture.rotation.y = Math.PI;
-            scene.remove(scene.children[11]);
+            scene.remove(scene.children[15]);
             scene.add(frontTexture);
             console.log(scene.children);
         });
@@ -119,7 +101,6 @@ function ShowModel() {
     else {
         mtlLoader.setPath( 'models/ThreeJs/logos/' );
         modelColor = modelToLoad.split('#');
-        modelColor2 = modelColor[1].split('*');
         material.color.setHex('0x' + modelColor[1]);
         mtlLoader.load(modelColor[0] + '.mtl', function (Selected) {
 
@@ -130,7 +111,7 @@ function ShowModel() {
             loader.load(modelColor[0] + '.obj', function (object) {
                 object.position.x = 1.95;
                 object.position.y = 2.05;
-                scene.remove(scene.children[11]);
+                scene.remove(scene.children[15]);
                 scene.add(object);
 
             });
