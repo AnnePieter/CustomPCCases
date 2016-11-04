@@ -29,7 +29,7 @@ jsonloader.load('models/ThreeJS/Customizable/BottomPootjes.json', function(botto
         }
     }));
     bottom.position.y =-2;
-    scene.add(bottom);
+    scene.children[2] = bottom;
 });
 jsonloader.load('models/ThreeJS/Customizable/Top.json', function(top){
     top.traverse((function (child) {
@@ -39,7 +39,7 @@ jsonloader.load('models/ThreeJS/Customizable/Top.json', function(top){
         }
     }));
     top.position.y = 2.1;
-    scene.add(top);
+    scene.children[3] = top;
 });
 
 jsonloader.load('models/ThreeJS/Customizable/Back.json', function(back){
@@ -63,7 +63,7 @@ jsonloader.load('models/ThreeJS/Customizable/Back.json', function(back){
     }));
     back.position.x = -1.95;
     back.position.y = 0.05;
-    scene.add(back);
+    scene.children[4] = back;
 });
 jsonloader.load('models/ThreeJS/Customizable/leeg.json', function(front){
     front.traverse((function (child) {
@@ -74,7 +74,7 @@ jsonloader.load('models/ThreeJS/Customizable/leeg.json', function(front){
     }));
     front.position.x = 1.95;
     front.position.y = 0.05;
-    scene.add(front);
+    scene.children[5] = front;
 });
 
 jsonloader.load('models/ThreeJS/Customizable/window.json', function(window){
@@ -87,7 +87,7 @@ jsonloader.load('models/ThreeJS/Customizable/window.json', function(window){
         loader.load( 'windowOnlyTinted.obj', function ( object ) {
             object.position.z = 0.95;
             object.position.y = 0.05;
-            scene.add( object );
+            scene.children[8] = object ;
         } );});
     window.traverse((function (child) {
         if(child instanceof THREE.Mesh)
@@ -97,7 +97,7 @@ jsonloader.load('models/ThreeJS/Customizable/window.json', function(window){
     }));
     window.position.z = 0.95;
     window.position.y = 0.05;
-    scene.add(window);
+    scene.children[6] = window;
 });
 
 
@@ -114,6 +114,7 @@ jsonloader.load('models/ThreeJS/Customizable/windowless.json', function(windowle
             object.position.y = 0.7;
             object.position.x = -0.6;
             object.scale.set(1.4, 1.4, 1.4);
+
             scene.add( object );
         } );});
     mtlLoader.load( 'GPU.mtl', function( gpu ) {
@@ -152,7 +153,20 @@ jsonloader.load('models/ThreeJS/Customizable/windowless.json', function(windowle
             object.scale.set(1.4, 1.4, 1.4);
             scene.add( object );
         } );});
+    mtlLoader.setPath('models/ThreeJS/bureau/');
+    mtlLoader.load( 'bureau.mtl', function( ram ) {
+        ram.preload();
+        var loader = new THREE.OBJLoader();
+        loader.setPath( 'models/ThreeJS/bureau/' );
+        loader.setMaterials(ram);
+        loader.load( 'bureau.obj', function ( object ) {
+            object.position.y = -2.3;
+            object.position.z = 4.5;
+            object.rotation.y = Math.PI/2;
 
+            object.scale.set(1.4, 1.4, 1.4);
+            scene.add( object );
+        } );});
 
 
     windowless.traverse((function (child) {
@@ -163,5 +177,5 @@ jsonloader.load('models/ThreeJS/Customizable/windowless.json', function(windowle
     }));
     windowless.position.z = -0.95;
     windowless.position.y = 0.05;
-    scene.add(windowless);
+    scene.children[7] = windowless;
 });

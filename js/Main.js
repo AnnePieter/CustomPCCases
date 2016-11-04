@@ -22,7 +22,9 @@ function init(){
     directionalLight.target.position.set(0,0,0);
     var ambientlight = new THREE.AmbientLight(0xffffff, 0.5);
 
-    scene.add(directionalLight,ambientlight);
+    //scene.add(directionalLight,ambientlight);
+    scene.children[0] = directionalLight;
+    scene.children[1] = ambientlight;
 
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth - 200, window.innerHeight - 200);
