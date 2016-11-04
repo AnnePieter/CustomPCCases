@@ -84,6 +84,7 @@ function ShowModel() {
     console.log(material);
     if (x.selectedIndex <  jsonarr.length) {
         var jsonloader = new THREE.ObjectLoader();
+        document.getElementById('secondary').style.visibility = "visible";
         jsonloader.load('models/ThreeJS/logos/'+ modelColor[0] + '.json', function (frontTexture) {
             frontTexture.traverse((function (child) {
                 if (child instanceof THREE.Mesh) {
@@ -99,6 +100,7 @@ function ShowModel() {
         });
     }
     else {
+        document.getElementById('secondary').style.visibility = "hidden";
         mtlLoader.setPath( 'models/ThreeJs/logos/' );
         modelColor = modelToLoad.split('#');
         material.color.setHex('0x' + modelColor[1]);
