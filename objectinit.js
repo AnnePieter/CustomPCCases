@@ -165,14 +165,3 @@ jsonloader.load('models/ThreeJS/Customizable/windowless.json', function(windowle
     windowless.position.y = 0.05;
     scene.add(windowless);
 });
-jsonloader.load('models/ThreeJS/inside/HddRack.json', function(hdd){
-    hdd.traverse((function (child) {
-        if(child instanceof THREE.Mesh)
-        {
-            child.material = new THREE.MeshPhongMaterial({color:0xE3E3E3});
-        }
-    }));
-    hdd.position.x = 1;
-    hdd.position.y = -1.1675;
-    scene.add(hdd);
-});
