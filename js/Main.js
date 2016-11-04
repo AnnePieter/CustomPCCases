@@ -10,6 +10,7 @@ var value = "#ffffff";
 var explosion = false;
 var objfile = false;
 //var valueTest = document.getElementById('primary').value;
+var point = new THREE.Vector3(0,0,0);
 
 init();
 animate();
@@ -17,7 +18,9 @@ function init(){
 
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 1, 10000);
-    camera.position.z = 7;
+    camera.position.z = 6;
+    camera.position.x = 6;
+    camera.lookAt(point);
     directionalLight = new THREE.DirectionalLight(0xf0f0f0,0.2);
     directionalLight.position.set( camera.position.x,camera.position.y,camera.position.z );
     directionalLight.target.position.set(0,0,0);
