@@ -122,14 +122,14 @@ function ShowModel() {
     }
     else {
         document.getElementById('secondary').style.visibility = "hidden";
-        mtlLoader.setPath( 'models/ThreeJs/logos/' );
+        mtlLoader.setPath( 'models/ThreeJS/logos/' );
         modelColor = modelToLoad.split('#');
         material.color.setHex('0x' + modelColor[1]);
         mtlLoader.load(modelColor[0] + '.mtl', function (Selected) {
 
             Selected.preload();
             var loader = new THREE.OBJLoader();
-            loader.setPath('models/ThreeJs/logos/');
+            loader.setPath('models/ThreeJS/logos/');
             loader.setMaterials(Selected);
             loader.load(modelColor[0] + '.obj', function (object) {
                 object.position.x = 1.95;
