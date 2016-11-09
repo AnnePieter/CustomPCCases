@@ -77,11 +77,11 @@ function spawn() {
     });
 
     jsonloader.load('models/ThreeJS/Customizable/window.json', function (window) {
-        mtlLoader.setPath('models/ThreeJs/Customizable/');
+        mtlLoader.setPath('models/ThreeJS/Customizable/');
         mtlLoader.load('windowOnlyTinted.mtl', function (wo) {
             wo.preload();
             var loader = new THREE.OBJLoader();
-            loader.setPath('models/ThreeJs/Customizable/');
+            loader.setPath('models/ThreeJS/Customizable/');
             loader.setMaterials(wo);
             loader.load('windowOnlyTinted.obj', function (object) {
                 object.position.z = 0.95;
