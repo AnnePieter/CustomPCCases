@@ -5,7 +5,7 @@
 
 /** Side panels **/
 function Frontpanelpush(){
-    jsonarr.push("alienware#000000*20ea19");
+    jsonarr.push("alienware#343434*20ea19");
     jsonarr.push("Aperture#FFFFFF*adaeff");
     jsonarr.push("MSI#343434*FF0000");
     jsonarr.push("nvidia#343434*48a11a");
@@ -16,7 +16,7 @@ function Frontpanelpush(){
     objarr.push("deadpool#010101");
     objarr.push("Overwatch#FF4800");
 }
-spawn()
+spawn();
 /** custom **/
 function spawn() {
     var jsonloader = new THREE.ObjectLoader();

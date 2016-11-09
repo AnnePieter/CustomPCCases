@@ -31,7 +31,7 @@ function init(){
     scene.children[1] = ambientlight;
 
     renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth - 200, window.innerHeight - 200);
+    renderer.setSize(window.innerWidth - 10, window.innerHeight - 100);
     renderer.setClearColor(0xB2DFEE);
     document.body.appendChild(renderer.domElement);
     controls = new THREE.OrbitControls(camera);
